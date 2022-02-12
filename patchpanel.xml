@@ -2,7 +2,7 @@
    <name>PatchPanel</name>
    <key>patchpanel</key>
    <state>stable</state>
-   <logo>https://raw.githubusercontent.com/pluginsGLPI/patchpanel/master/patchpanel.png</logo>
+   <logo>https://raw.githubusercontent.com/rbrannath/patchpanel/master/patchpanel.png</logo>
    <description>
       <short>
          <en>PatchPanel GLPI plugin.</en>
