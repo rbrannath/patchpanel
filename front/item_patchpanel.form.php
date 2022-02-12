@@ -78,7 +78,7 @@ if (isset($_POST['update'])) {
          unset($ipp->fields["id"]);
 
          if (isset($_POST["create_netpoint"])) {
-            $inputNetpoint['name'] = (empty($_POST["name"]) ? $patchPanel->fields['name'] : $_POST["name"]).'.'.$input["name"];
+            $inputNetpoint['name'] = $input["name"];
             $idNetpoint = $netpoint->add($inputNetpoint);
             $input['netpoints_id'] = $idNetpoint;
          }
