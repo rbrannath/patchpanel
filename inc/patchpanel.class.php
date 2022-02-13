@@ -77,24 +77,26 @@ class PluginPatchpanelPatchpanel extends CommonDBTM {
       $this->showFormHeader($options);
 
       $tplmark = $this->getAutofillMark('name', $options);
-      echo "<tr class='tab_bg_1'>";
+      echo "<div class=\"form-field row col-12 col-sm-6 mb-2\">";
+      echo "<label class=\"col-form-label col-xxl-5 text-xxl-end\"></label>";
+      
       //TRANS: %1$s is a string, %2$s a second one without spaces between them : to change for RTL
-      echo "<td>".sprintf(__('%1$s%2$s'), __('Name'), $tplmark).
-        "</td>";
-      echo "<td>";
+      echo "<div class=\"col-xxl-7 field-container\">".sprintf(__('%1$s%2$s'), __('Name'), $tplmark)."</div>";
+      echo "<div>";
       $objectName = autoName($this->fields["name"], "name",
                           (isset($options['withtemplate']) && ($options['withtemplate'] == 2)),
                           $this->getType(), $this->fields["entities_id"]);
       Html::autocompletionTextField($this, "name", ['value' => $objectName]);
-      echo "</td>";
-      echo "<td>".__('Status')."</td>";
-      echo "<td>";
+      echo "</div>";
+      echo "<div class=\"form-field row col-12 col-sm-6 mb-2\">";
+      echo "<label class=\"col-form-label col-xxl-5 text-xxl-end\">".__('Status')."</label>";
+      echo "<div class=\"col-xxl-7 field-container\">";
       State::dropdown([
        'value'     => $this->fields["states_id"],
        'entity'    => $this->fields["entities_id"],
        'condition' => ['is_visible_networkequipment' => 1]
       ]);
-      echo "</td></tr>";
+      echo "</div>";
 
       $this->showDcBreadcrumb();
 
